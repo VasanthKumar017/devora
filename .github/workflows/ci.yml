@@ -9,7 +9,6 @@ on:
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [18.x]
@@ -23,22 +22,22 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      # 📦 Install client dependencies
       - name: 📦 Install client dependencies
-        working-directory: client
-        run: npm install
+        run: |
+          cd client
+          npm ci
 
-      # ✅ Build client app with Vite
       - name: ✅ Build client
-        working-directory: client
-        run: npm run build
+        run: |
+          cd client
+          npx vite build
 
-      # 📦 Install server dependencies
       - name: 📦 Install server dependencies
-        working-directory: server
-        run: npm install
+        run: |
+          cd server
+          npm ci
 
-      # ✅ (Optional) Lint server
-      - name: ✅ Lint server
-        working-directory: server
-        run: npm run lint || echo 'No lint script yet'
+      - name: ✅ Lint server (optional)
+        run: |
+          cd server
+          npm run lint || echo 'No lint script yet'
