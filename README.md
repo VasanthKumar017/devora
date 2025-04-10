@@ -1,130 +1,128 @@
-# Devora
+# 🚀 Devora
 
-A professional, fully extensible microservice-based landing page built with **React** (frontend), **Node.js** (backend), and **SQL** database support. Designed for freelancers, developers, and small agencies to manage and showcase their digital services.
-
----
-
-## 🚀 Features
-
-- 🔧 **Admin Dashboard** to visually manage services and categories
-- 🧠 **Feature Flags** to soft-hide services without deleting
-- 🔐 **Authentication-ready** with pluggable login (username/password)
-- 💬 **Chatbot support** for client interaction
-- 🎯 **SEO & Performance Optimized** (meta tags, sitemap, robots.txt)
-- 📱 **Responsive & PWA-ready** (mobile-first design)
-- 🔍 **Accessibility-first (a11y)** with ARIA and keyboard navigation
-- 📦 **Component-based architecture** with scoped logic & CSS
-- 🧱 Scalable file structure & CI/CD-ready
+**Devora** is a fully modular, microservice-based landing page and service management platform built with React and Node.js. Designed for freelancers, agencies, or service providers who want a customizable and scalable way to showcase their services — with full admin control, CI/CD support, and future-ready features.
 
 ---
 
-## 📂 Project Structure (Simplified)
+## 📦 Tech Stack
+
+| Frontend      | Backend      | Database | Styling       | Auth (Planned) | DevOps         |
+|---------------|--------------|----------|----------------|----------------|----------------|
+| React         | Node.js + Express | MySQL/PostgreSQL | Tailwind CSS   | Basic Login ➔ JWT (planned) | GitHub Actions (CI/CD) |
+
+---
+
+## 📁 Project Structure
 
 ```
 devora/
 ├── client/               # React frontend
-│   └── src/
-│       ├── components/   # Reusable UI components
-│       ├── pages/        # Page-level views
-│       ├── assets/       # Static assets (images, icons)
-│       ├── styles/       # Component-scoped CSS
-│       └── App.jsx       # App entry point
-│
-├── server/               # Node.js backend
-│   └── src/
-│       ├── routes/       # RESTful API routes
-│       ├── controllers/  # Business logic
-│       ├── models/       # DB models (SQL)
-│       └── config/       # DB connection, env config
-│
-├── .env                  # Environment variables
-├── .gitignore            # Git exclusions
-├── README.md             # This file
-└── package.json          # Project dependencies
+│   ├── components/       # Modular components (Header, Services, etc.)
+│   ├── styles/           # Per-component CSS
+│   └── ...
+├── server/               # Node.js backend (Express)
+│   ├── routes/
+│   ├── controllers/
+│   └── ...
+├── database/             # SQL schema, seeders
+├── .github/
+│   ├── workflows/ci.yml  # GitHub Actions CI/CD
+│   ├── ISSUE_TEMPLATE.md
+│   └── PULL_REQUEST_TEMPLATE.md
+├── .gitignore
+├── README.md
+└── package.json
 ```
 
 ---
 
-## 📥 Installation
+## 🛠 Features
 
+- ✅ Modular microservice layout
+- ✅ Admin Dashboard to manage services (add/edit/hide)
+- ✅ Feature Flags to soft-hide services
+- ✅ CI/CD with GitHub Actions
+- ✅ Component-based folder organization
+- ✅ Easily add/remove services & categories
+- ✅ Basic authentication (username/password)
+- 🔚 JWT/Sessions for auth
+- 🔚 Chatbot integration
+- 🔚 Content export (CSV/JSON)
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1. Clone the Repo
 ```bash
-# 1. Clone the repo
-https://github.com/VasanthKumar017/devora.git
+git clone https://github.com/VasanthKumar017/devora.git
 cd devora
+```
 
-# 2. Install client and server dependencies
-cd client && npm install
-cd ../server && npm install
+### 2. Install Dependencies
+```bash
+# For backend
+cd server
+npm install
 
-# 3. Create a .env file in /server and /client if needed
+# For frontend
+cd ../client
+npm install
+```
 
-# 4. Start development servers
-cd client && npm run dev
-cd ../server && npm run dev
+### 3. Run Dev Environment
+```bash
+# Backend
+cd server
+npm run dev
+
+# Frontend (in another terminal)
+cd client
+npm run dev
+```
+
+### 4. Environment Variables
+
+Create a `.env` file in both `server/` and `client/` folders (if needed) with your credentials like:
+
+```
+PORT=5000
+DB_HOST=localhost
+DB_USER=root
+DB_PASS=yourpassword
 ```
 
 ---
 
-## 🧪 Usage
+## 🔄 CI/CD Pipeline
 
-Once running, you can:
-- View the landing page on `http://localhost:3000`
-- Access admin dashboard (in-progress)
-- Add/edit/delete services via admin UI
+This project uses **GitHub Actions** to:
 
----
+- Lint/test code
+- Build client
+- Optionally deploy in the future
 
-## 🤝 Contributing
-
-We welcome contributions!
-1. Fork this repo
-2. Create a new branch: `git checkout -b feature/your-feature`
-3. Make your changes
-4. Commit: `git commit -m 'Add new feature'`
-5. Push to your fork
-6. Submit a pull request
+> Workflow file: `.github/workflows/ci.yml`
 
 ---
 
-## 📜 License
+## 💬 Contributing
 
-This project is licensed under the **MIT License** — see `LICENSE` file for details.
+1. Fork the repo
+2. Create a new branch: `feature/your-feature-name`
+3. Commit your changes
+4. Push and open a Pull Request
 
 ---
 
-## 🛠 Templates
+## 📄 License
 
-### ISSUE_TEMPLATE.md
-```markdown
-## Issue Summary
+MIT (or add one)
 
-- **Bug or Feature**:
-- **Steps to Reproduce**:
-- **Expected Behavior**:
-- **Actual Behavior**:
+---
 
-## Environment
-- OS:
-- Browser:
-- Node Version:
+## 🧠 Credits
+
+Created by **Vasanth Kumar A M**  
+[GitHub](https://github.com/VasanthKumar017) | [Portfolio](https://vasanthkumar017.github.io)
 ```
-
-### PULL_REQUEST_TEMPLATE.md
-```markdown
-## Description
-
-- Brief description of what this PR does
-
-## Related Issues
-
-- Closes #issue_number
-
-## Checklist
-
-- [ ] Code compiles without error
-- [ ] All new code is covered with tests
-- [ ] I have added necessary documentation
-```
-
-
-
